@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json()); // added body key to req
 app.use(cors({
   credentials: true,
-  origin: "*"
+  origin: "https://radiant-dawn-71220.herokuapp.com/"
 }));
 app.use(
   session({
