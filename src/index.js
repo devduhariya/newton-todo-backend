@@ -17,7 +17,7 @@ app.use(cors({
 app.use(
   session({
     secret: session_secret,
-    cookie: { maxAge: 1 * 60 * 60 * 1000,sameSite='none',secure:true }
+    cookie: { maxAge: 1 * 60 * 60 * 1000 }
   })
 );
 app.use(express.static(path.join(__dirname, 'build')));
