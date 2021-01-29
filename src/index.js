@@ -23,7 +23,7 @@ app.use(
 app.use(express.static(path.join(__dirname, 'build')));
 
 
-const db = mongoose.createConnection("mongodb://localhost:27017/TodoApp", {
+const db = mongoose.createConnection("mongodb+srv://sukhdev:1234@todoapp.aqica.mongodb.net/test", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
