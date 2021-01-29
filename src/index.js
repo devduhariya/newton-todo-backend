@@ -23,7 +23,7 @@ app.use(
 app.use(express.static(path.join(__dirname, 'build')));
 
 
-const db = mongoose.createConnection("mongodb+srv://sukhdev:1234@todoapp.aqica.mongodb.net/todoapp?retryWrites=true&w=majority", {
+const db = mongoose.createConnection("mongodb+srv://sukhdev:123@todoagin.d54k0.mongodb.net/todoagain?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
