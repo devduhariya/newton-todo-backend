@@ -12,12 +12,15 @@ const app = express();
 app.use(express.json()); // added body key to req
 app.use(cors({
   credentials: true,
-  origin: "https://radiant-dawn-71220.herokuapp.com/"
+  origin: "https://radiant-dawn-71220.herokuapp.com/",
+
 }));
 app.use(
   session({
     secret: session_secret,
-    cookie: { maxAge: 1 * 60 * 60 * 1000 }
+    cookie: { maxAge: 1 * 60 * 60 * 1000 },
+    resave:true,
+    saveUninitialized:false
   })
 );
 app.use(express.static(path.join(__dirname, 'build')));
