@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json()); // added body key to req
 app.use(cors({
   credentials: true,
-  origin: "http://localhost:8080"
+  origin: "*"
 }));
 app.use(
   session({
@@ -23,7 +23,7 @@ app.use(
 app.use(express.static(path.join(__dirname, 'build')));
 
 
-const db = mongoose.createConnection("mongodb+srv://sukhdev:1234@todoapp.aqica.mongodb.net/test", {
+const db = mongoose.createConnection("mongodb+srv://sukhdev:1234@todoapp.aqica.mongodb.net/todoapp?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
