@@ -49,7 +49,7 @@ const todoModel = db.model("todo", todoSchema);
 const isNullOrUndefined = (val) => val === null || val === undefined || val === '';
 const SALT = 5;
 app.get('/', (req,res) =>{
-  res.send('application is running on port: '+PORT);
+  res.send('application is running on : '+process.env.ORIGIN);
 })
 app.post("/signup", async (req, res) => {
   const { userName, password } = req.body;
