@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json()); // added body key to req
 app.use(cors({
   credentials: true,
-  origin: 'https://firsttodo-app.herokuapp.com/'
+  origin: 'https://quiet-chamber-00108.herokuapp.com/'
 }));
 app.use(
   session({
