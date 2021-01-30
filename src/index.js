@@ -10,10 +10,10 @@ const PORT = process.env.PORT || 9999;
 
 const app = express();
 app.use(express.json()); // added body key to req
-// app.use(cors({
-//   credentials: true,
-//   origin: "https://quiet-chamber-00108.herokuapp.com/"
-// }));
+app.use(cors({
+  credentials: true,
+  origin: process.env.ORIGIN || "*"
+}));
 app.use(
   session({
     secret: session_secret,
