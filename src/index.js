@@ -10,10 +10,10 @@ const PORT = process.env.PORT || 9999;
 
 const app = express();
 app.use(express.json()); // added body key to req
-app.use(cors({
-  credentials: true,
-  origin: "https://quiet-chamber-00108.herokuapp.com"
-}));
+// app.use(cors({
+//   credentials: true,
+//   origin: "https://quiet-chamber-00108.herokuapp.com/"
+// }));
 app.use(
   session({
     secret: session_secret,
@@ -22,8 +22,11 @@ app.use(
     saveUninitialized:false
   })
 );
-app.use(express.static(path.join(__dirname, 'build')));
-
+// app.use(express.static(path.join(__dirname, 'build')));
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", process.env.ORIGIN || "*");
+  next();
+});
 
 const db = mongoose.createConnection("mongodb+srv://sukhdev:123@todoagin.d54k0.mongodb.net/todoagain?retryWrites=true&w=majority", {
   useNewUrlParser: true,
